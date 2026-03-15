@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 15% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 13%;
+    --primary: 215 25% 27%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 15% 13%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 207 90% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 207 90% 54%;
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --steel: 220 10% 40%;
+    --steel-light: 220 10% 78%;
+    --charcoal: 220 15% 13%;
+    --charcoal-light: 220 12% 22%;
+    --surface-dark: 220 15% 8%;
+    --surface-medium: 220 12% 15%;
+    --industrial-blue: 207 90% 54%;
+    --industrial-blue-dark: 207 80% 42%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 207 90% 54%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+    --card: 220 12% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 12% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 207 90% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 12% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 9% 60%;
+    --accent: 207 90% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 12% 22%;
+    --input: 220 12% 22%;
+    --ring: 207 90% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  [dir="rtl"] body,
+  [dir="rtl"] {
+    font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-steel {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(220 10% 78%), hsl(0 0% 100%), hsl(220 10% 78%));
+  }
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(207 90% 54%), hsl(207 80% 72%));
+  }
+  .bg-surface-dark {
+    background-color: hsl(var(--surface-dark));
+  }
+  .bg-surface-medium {
+    background-color: hsl(var(--surface-medium));
+  }
+  .bg-gradient-industrial {
+    background: linear-gradient(180deg, hsl(220 15% 8%) 0%, hsl(220 12% 15%) 100%);
+  }
+  .bg-gradient-steel {
+    background: linear-gradient(135deg, hsl(220 12% 15%), hsl(220 15% 8%));
+  }
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(220 15% 6%) 0%, hsl(220 12% 12%) 50%, hsl(207 30% 15%) 100%);
+  }
+  .shadow-industrial {
+    box-shadow: 0 4px 30px -8px hsla(207, 90%, 54%, 0.15), 0 2px 8px -2px hsla(0, 0%, 0%, 0.3);
+  }
+  .shadow-card-hover {
+    box-shadow: 0 8px 40px -8px hsla(207, 90%, 54%, 0.25), 0 4px 16px -4px hsla(0, 0%, 0%, 0.4);
+  }
+  .border-steel {
+    border-color: hsl(220 10% 25%);
+  }
+  .glass-surface {
+    background: hsla(220, 12%, 15%, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(220, 10%, 40%, 0.2);
+  }
+  .metal-surface {
+    background: linear-gradient(180deg, hsl(220 10% 20%), hsl(220 12% 15%));
+    border: 1px solid hsla(220, 10%, 30%, 0.3);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(220 15% 8%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(220 10% 30%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(207 90% 54%);
+}
